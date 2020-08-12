@@ -38,12 +38,15 @@ public:
     Group();
     ~Group();
     Grid workingGrid;
-    void init(Space *firstSpace, Grid grid);
-    void addSpace(int *indexList);
+    int members;
+    int optionCount;
+    void init(Space firstSpace, Grid grid);
+    void addSpace();
     void updateOptions();
+    bool spacesFree[16][16];
    
 private:
     Space *_memberSpaces[15];
-    static int memberIndeces[15];
+    Space *_optionSpaces[15 * 8];
 }
 #endif /* RandomGroupClasses_hpp */
